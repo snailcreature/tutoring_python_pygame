@@ -18,7 +18,7 @@ r = 50
 
 running = True
 while running:
-    clock.tick()
+    dt = clock.tick()/1000
 
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
@@ -28,8 +28,8 @@ while running:
 
     pygame.draw.circle(screen, (0, 0, 255), (x, y), r)
 
-    x += dx # The same as x = x + dx
-    y += dy
+    x += dx * dt # The same as x = x + dx
+    y += dy * dt
 
     pygame.display.update()
 
