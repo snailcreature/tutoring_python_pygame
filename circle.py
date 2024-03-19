@@ -1,15 +1,20 @@
 import pygame
 pygame.init()
 
-screen = pygame.display.set_mode([500, 500])
+S_WIDTH = 600
+S_HEIGHT = 500
+
+screen = pygame.display.set_mode([S_WIDTH, S_HEIGHT])
 
 clock = pygame.time.Clock()
 
-dx = 5
+dx = 5 # <- Displacement in x direction
 dy = 2
 
-x = 0
-y = 0
+x = S_WIDTH/2
+y = S_HEIGHT/2
+
+r = 50
 
 running = True
 while running:
@@ -21,7 +26,7 @@ while running:
 
     screen.fill((225, 225, 225))
 
-    pygame.draw.circle(screen, (0, 0, 255), (x, y), 75)
+    pygame.draw.circle(screen, (0, 0, 255), (x, y), r)
 
     x += dx # The same as x = x + dx
     y += dy
